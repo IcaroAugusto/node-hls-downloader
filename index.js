@@ -63,7 +63,7 @@ function getBaseUrl(url) {
   return url.slice(0, url.lastIndexOf('/') + 1);
 }
 
-class HLSDownloader {
+class HLSRecorder {
   constructor(params = {}) {
     this.url = params.url;
     this.file = params.file;
@@ -159,4 +159,4 @@ class HLSDownloader {
   }
 }
 
-module.exports = HLSDownloader;
+module.exports = HLSRecorder;

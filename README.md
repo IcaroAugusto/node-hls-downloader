@@ -1,6 +1,6 @@
 # Node.js HLS Downloader
 
-This has been written for usage with [https://leakgirls.com](https://leakgirls.com), but can be used to download any HLS stream.
+This has been written for usage with [https://leakgirls.com](https://leakgirls.com), but can be used to download/record any HLS stream.
 
 * Audio and video must be in the same stream;
 * It supports encrypted streams;
@@ -9,10 +9,10 @@ This has been written for usage with [https://leakgirls.com](https://leakgirls.c
 ## Usage
 
 ```JavaScript
-const HLSDownloader = require('hls-downloader');
+const HLSRecorder = require('hls-recorder');
 
 async function main() {
-  var downloader = new HLSDownloader({
+  var downloader = new HLSRecorder({
     url: 'm3u8 url',
     file: 'ts file',
     headers: 'request headers', //look at the code for defaults
