@@ -73,6 +73,7 @@ class HLSRecorder {
     this.sorting = params.sorting || 'best';
     this.retries = params.retries || 0;
     this.retryDelay = params.retryDelay || 1000;
+    if (params.ignoreTls) process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0'; //needed sometimes
     this.sortMultiplier = this.sorting == 'best' ? 1 : -1;
     this.running = false;
     this.playlist = null;
@@ -109,6 +110,7 @@ class HLSRecorder {
   }
 
   async download(baseurl, segment, sequence) {
+    console.log(segment.uri);
     var data = await read(segment.uri.includes('http') ? segment.uri : baseurl + segment.uri, this.headers);
     if (!segment.key) return data;
     var key = this.getKey(segment.key);
@@ -136,7 +138,7 @@ class HLSRecorder {
       var manifest = parse(await readStr(url, this.headers));
       if (manifest.segments && manifest.segments.length > 0) {
         await this.downloadSegments(getBaseUrl(url), manifest.segments, manifest.mediaSequence);
-        await sleep(manifest.targetDuration ? 1000*manifest.targetDuration : 1000);
+        await sleep(500);
         continue;
       }
       if (!manifest.playlists || manifest.playlists.length == 0) {
