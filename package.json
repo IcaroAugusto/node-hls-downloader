@@ -1,6 +1,6 @@
 {
   "name": "hls-recorder",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "hls recorder downloader for node that supports encrypted streams",
   "main": "index.js",
   "scripts": {

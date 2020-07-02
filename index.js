@@ -110,7 +110,6 @@ class HLSRecorder {
   }
 
   async download(baseurl, segment, sequence) {
-    console.log(segment.uri);
     var data = await read(segment.uri.includes('http') ? segment.uri : baseurl + segment.uri, this.headers);
     if (!segment.key) return data;
     var key = this.getKey(segment.key);
