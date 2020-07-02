@@ -1,4 +1,4 @@
-# Node.js HLS Downloader
+# Node.js HLS Recorder
 
 This has been written for usage with [https://leakgirls.com](https://leakgirls.com), but can be used to download/record any HLS stream.
 

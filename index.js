@@ -54,7 +54,7 @@ function decrypt(buffer, algo, key, iv) {
 
 function trim(arr, length) {
   if (arr.length > length) {
-    return arr.slice(Math.max(arr.length-length, 0), arr.length);
+    return arr.slice(arr.length - length, arr.length);
   }
   return arr;
 }
