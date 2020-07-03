@@ -98,6 +98,7 @@ class HLSRecorder {
       key: await read(key.uri.includes('http') ? key.uri : baseurl + key.uri, this.headers),
       method: key.method,
       uri: key.uri,
+      iv: key.iv,
     };
     this.keys.push(result);
     this.keys = trim(this.keys, 100);
